@@ -1,0 +1,15 @@
+{
+    "nimi": "Digitekniikat",
+    "osallistujatlkm": "5",
+    "osallistujat": [
+        "Matti",
+        "Liisa",
+        "Kalle",
+        "Heikki",
+        "Minttu"
+    ],
+    "alkupvm": "18.8.2025",
+    "loppupvm": "10.10.2025",
+    "kesto": "8",
+    "kuva": "images/coding.jpg"
+}

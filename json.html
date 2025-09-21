@@ -40,6 +40,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#">JSON</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="toteutus.html">Toteutus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pokemonhaku.html">Pokemon-haku</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -53,6 +59,17 @@
                 teksti = "<h1>" + data.otsikko + "</h1>";
                 teksti = teksti + data.kuvaus;
                 teksti = teksti + "<p><img src=" + data.kuva + "></p>"
+                teksti = teksti + "<h2>Opintojakso</h2>";
+                teksti = teksti + "Nimi: " + data.opintojakso.nimi + "<br>"
+                teksti = teksti + "Tunnus: " + data.opintojakso.tunnus + "<br>"
+                teksti = teksti + "Opintopisteet: " + data.opintojakso.opintopisteet + "<br>" + "<p>"
+                teksti = teksti + "<h2>Aiheet</h2>";
+
+                for (var i = 0; i < data.tekniikat.length; i++) {
+                    teksti += "<b>Aihe: " + data.tekniikat[i].aihe + "</b>";
+                    teksti += " <a href=" + data.tekniikat[i].linkki + ">" + data.tekniikat[i].linkki + "</a>" + "<br>";
+                }
+
                 document.getElementById("vastaus").innerHTML = teksti;
             }
 
