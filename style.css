@@ -1,22 +1,40 @@
 .navbar-brand {
   font-weight: bold;
-  color: gold !important;
-  font-size: 1.5rem;
+  color: #344e41 !important;
 }
 
-/* Muuttaa linkkien hover-väriä */
+.nav-link {
+  color: #3a5a40 !important;
+}
+
 .nav-link:hover {
-  color: #ffcc00 !important;
+  color: #a3b18a !important;
 }
 
-/* Aktiivisen linkin korostus */
 .nav-link.active {
-  color: #ffffff !important;
+  color: #3a5a40 !important;
   font-weight: bold;
-  text-decoration: underline;
 }
 
-/* Esimerkkiosioiden tausta */
 section {
   border-bottom: 1px solid #ddd;
 }
+
+.row {
+  padding: 4px;
+}
+
+.card {
+  padding: 2px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #dad7cd;
+  color: #3a5a40;
+}
+
+.accordion-button:focus {
+  outline: 2px solid #000;
+  box-shadow: none;
+}
+
