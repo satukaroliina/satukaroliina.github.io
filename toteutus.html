@@ -57,13 +57,13 @@
             function kerro(data) {
                 var teksti = "";
                 teksti = "<h1>" + data.nimi + "</h1>";
-                teksti = teksti + data.osallistujatlkm + " kpl";
+                teksti = teksti + data.osallistujatlkm + " kpl" + "<br>";
                 for (var i = 0; i < data.osallistujat.length; i++) {
-                    teksti += data.osallistujat + "</b>";
+                    teksti += data.osallistujat[i].nimi + " ";
                 }
-                teksti = teksti + data.alkupvm + "-" + data.loppupvm
-                teksti = teksti + data.kesto + " viikkoa"
-                teksti = teksti + "<p><img src=" + data.kuva + "></p>"
+                teksti = teksti + "<br>" + data.alkupvm + "-" + data.loppupvm + "<br>";
+                teksti = teksti + data.kesto + " viikkoa" + "<br>";
+                teksti = teksti + "<p><img src=" + data.kuva + " width=80% ></p>"
 
                 document.getElementById("vastaus").innerHTML = teksti;
             }
