@@ -1,0 +1,22 @@
+.navbar-brand {
+  font-weight: bold;
+  color: gold !important;
+  font-size: 1.5rem;
+}
+
+/* Muuttaa linkkien hover-väriä */
+.nav-link:hover {
+  color: #ffcc00 !important;
+}
+
+/* Aktiivisen linkin korostus */
+.nav-link.active {
+  color: #ffffff !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Esimerkkiosioiden tausta */
+section {
+  border-bottom: 1px solid #ddd;
+}
