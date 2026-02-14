@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #A636FE;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        .required-note {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Contact Form</h2>
+    <p class="required-note">Fields marked with * are required.</p>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000003OCMU" method="POST">
+
+        <!-- Salesforce required hidden fields -->
+        <input type="hidden" name="oid" value="00Dg5000003OCMU">
+        <input type="hidden" name="company" value="Private Customer">
+        <input type="hidden" name="retURL" value="https://satukaroliina.github.io/thankyou.html">
+
+        <!-- Salutation -->
+        <label for="salutation">Salutation</label>
+        <select id="salutation" name="salutation">
+            <option value="">--None--</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="Prof.">Prof.</option>
+            <option value="Mx.">Mx.</option>
+        </select>
+
+        <label for="first_name">First Name *</label>
+        <input id="first_name" maxlength="40" name="first_name" type="text" required>
+
+        <label for="last_name">Last Name *</label>
+        <input id="last_name" maxlength="80" name="last_name" type="text" required>
+
+        <label for="email">Email *</label>
+        <input id="email" maxlength="80" name="email" type="email" required>
+
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" type="tel">
+
+        <label for="00Ng5000008s4d8">Product Type *</label>
+        <select id="00Ng5000008s4d8" name="00Ng5000008s4d8" required>
+            <option value="">Choose product type</option>
+            <option value="Phone">Phone</option>
+            <option value="Laptop">Laptop</option>
+        </select>
+
+        <label for="00Ng5000008s6Te">Product Model *</label>
+        <input id="00Ng5000008s6Te" name="00Ng5000008s6Te" type="text" required>
+
+        <label for="00Ng5000008s9Mf">Purchase Year *</label>
+        <input id="00Ng5000008s9Mf" name="00Ng5000008s9Mf" type="number" min="2000" max="2026" required>
+
+        <label for="00Ng5000008s9WL">Condition of the product *</label>
+        <select id="00Ng5000008s9WL" name="00Ng5000008s9WL" required>
+            <option value="">Choose condition</option>
+            <option value="New">New</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Broken">Broken</option>
+        </select>
+
+        <label for="00Ng5000008s9kr">Estimated Price *</label>
+        <input id="00Ng5000008s9kr" name="00Ng5000008s9kr" type="number" step="any" required>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</div>
+
+</body>
+</html>
