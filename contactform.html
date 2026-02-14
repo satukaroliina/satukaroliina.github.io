@@ -67,12 +67,10 @@
 
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000003OCMU" method="POST">
 
-        <!-- Salesforce required hidden fields -->
         <input type="hidden" name="oid" value="00Dg5000003OCMU">
         <input type="hidden" name="company" value="Private Customer">
         <input type="hidden" name="retURL" value="https://satukaroliina.github.io/thankyou.html">
 
-        <!-- Salutation -->
         <label for="salutation">Salutation</label>
         <select id="salutation" name="salutation">
             <option value="">--None--</option>
@@ -121,6 +119,8 @@
         <label for="00Ng5000008s9kr">Estimated Price *</label>
         <input id="00Ng5000008s9kr" name="00Ng5000008s9kr" type="number" step="any" required>
 
+        <input type="hidden" name="leadsource" value="Web">
+
         <input type="submit" value="Submit">
 
     </form>
@@ -129,3 +129,4 @@
 
 </body>
 </html>
+
