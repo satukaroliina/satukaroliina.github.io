@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Form</title>
+    <title>Sell Your Device</title>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
     <style>
@@ -30,7 +30,7 @@
             font-weight: bold;
         }
 
-        input, select, textarea {
+        input, select {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
@@ -62,105 +62,90 @@
 
 <div class="form-container">
 
-    <h2>Contact Form</h2>
-    <p class="required-note">Fields marked with * are required.</p>
+<h2>Sell Your Device</h2>
+<p class="required-note">Fields marked with * are required.</p>
 
-    <form id="w2lForm"
-          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000003OCMU"
-          method="POST">
+<form id="w2lForm"
+action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000003OCMU"
+method="POST">
 
-        <!-- Salesforce required hidden fields -->
-        <input type="hidden" name="oid" value="00Dg5000003OCMU">
+<input type="hidden" name="oid" value="00Dg5000003OCMU">
+<input type="hidden" id="company" name="company" value="">
+<input type="hidden" name="retURL" value="https://satukaroliina.github.io/thankyou.html">
 
-        <!-- IMPORTANT:
-             Lead.Company is required by Salesforce Web-to-Lead.
-             Because you use only Person Accounts, we set Company = "FirstName LastName"
-             (technical value only; you can hide Company field from Lead page layouts in Salesforce).
-        -->
-        <input type="hidden" id="company" name="company" value="">
+<label for="salutation">Salutation</label>
+<select id="salutation" name="salutation">
+    <option value="">--None--</option>
+    <option value="Mr.">Mr.</option>
+    <option value="Ms.">Ms.</option>
+    <option value="Mrs.">Mrs.</option>
+    <option value="Dr.">Dr.</option>
+    <option value="Prof.">Prof.</option>
+    <option value="Mx.">Mx.</option>
+</select>
 
-        <input type="hidden" name="retURL" value="https://satukaroliina.github.io/thankyou.html">
+<label for="first_name">First Name *</label>
+<input id="first_name" name="first_name" maxlength="40" type="text" required>
 
-        <!-- Salutation -->
-        <label for="salutation">Salutation</label>
-        <select id="salutation" name="salutation">
-            <option value="">--None--</option>
-            <option value="Mr.">Mr.</option>
-            <option value="Ms.">Ms.</option>
-            <option value="Mrs.">Mrs.</option>
-            <option value="Dr.">Dr.</option>
-            <option value="Prof.">Prof.</option>
-            <option value="Mx.">Mx.</option>
-        </select>
+<label for="last_name">Last Name *</label>
+<input id="last_name" name="last_name" maxlength="80" type="text" required>
 
-        <label for="first_name">First Name *</label>
-        <input id="first_name" maxlength="40" name="first_name" type="text" required>
+<label for="email">Email *</label>
+<input id="email" name="email" maxlength="80" type="email" required>
 
-        <label for="last_name">Last Name *</label>
-        <input id="last_name" maxlength="80" name="last_name" type="text" required>
+<label for="phone">Phone</label>
+<input id="phone" name="phone" maxlength="40" type="tel">
 
-        <label for="email">Email *</label>
-        <input id="email" maxlength="80" name="email" type="email" required>
+<label for="00Ng5000008s4d8">Product Type *</label>
+<select id="00Ng5000008s4d8" name="00Ng5000008s4d8" required>
+    <option value="">Choose product type</option>
+    <option value="Phone">Phone</option>
+    <option value="Laptop">Laptop</option>
+</select>
 
-        <label for="phone">Phone</label>
-        <input id="phone" maxlength="40" name="phone" type="tel">
+<label for="00Ng5000008s6Te">Product Model *</label>
+<input id="00Ng5000008s6Te" name="00Ng5000008s6Te" maxlength="50" type="text" required>
 
-        <label for="00Ng5000008s4d8">Product Type *</label>
-        <select id="00Ng5000008s4d8" name="00Ng5000008s4d8" required>
-            <option value="">Choose product type</option>
-            <option value="Phone">Phone</option>
-            <option value="Laptop">Laptop</option>
-        </select>
+<label for="00Ng5000008s9Mf">Purchase Year *</label>
+<input id="00Ng5000008s9Mf" name="00Ng5000008s9Mf" type="number" min="2000" max="2026" required>
 
-        <label for="00Ng5000008s6Te">Product Model *</label>
-        <input id="00Ng5000008s6Te" name="00Ng5000008s6Te" type="text" required>
+<label for="00Ng5000008s9WL">Condition *</label>
+<select id="00Ng5000008s9WL" name="00Ng5000008s9WL" required>
+    <option value="">Choose condition</option>
+    <option value="New">New</option>
+    <option value="Good">Good</option>
+    <option value="Fair">Fair</option>
+    <option value="Broken">Broken</option>
+</select>
 
-        <label for="00Ng5000008s9Mf">Purchase Year *</label>
-        <input id="00Ng5000008s9Mf" name="00Ng5000008s9Mf" type="number" min="2000" max="2026" required>
+<label for="00Ng5000008s9kr">Estimated Price (€) *</label>
+<input id="00Ng5000008s9kr" name="00Ng5000008s9kr" type="number" step="any" required>
 
-        <label for="00Ng5000008s9WL">Condition of the product *</label>
-        <select id="00Ng5000008s9WL" name="00Ng5000008s9WL" required>
-            <option value="">Choose condition</option>
-            <option value="New">New</option>
-            <option value="Good">Good</option>
-            <option value="Fair">Fair</option>
-            <option value="Broken">Broken</option>
-        </select>
+<input type="submit" value="Get Offer">
 
-        <label for="00Ng5000008s9kr">Estimated Price *</label>
-        <input id="00Ng5000008s9kr" name="00Ng5000008s9kr" type="number" step="any" required>
-
-        <input type="submit" value="Submit">
-
-    </form>
-
+</form>
 </div>
 
 <script>
-    (function () {
-        const form = document.getElementById('w2lForm');
-        const fnEl = document.getElementById('first_name');
-        const lnEl = document.getElementById('last_name');
-        const companyEl = document.getElementById('company');
+(function () {
+    const form = document.getElementById('w2lForm');
+    const fnEl = document.getElementById('first_name');
+    const lnEl = document.getElementById('last_name');
+    const companyEl = document.getElementById('company');
 
-        function setCompanyFromName() {
-            const fn = (fnEl.value || '').trim();
-            const ln = (lnEl.value || '').trim();
-            const fullName = [fn, ln].filter(Boolean).join(' ');
+    function setCompanyFromName() {
+        const fn = (fnEl.value || '').trim();
+        const ln = (lnEl.value || '').trim();
+        const fullName = [fn, ln].filter(Boolean).join(' ');
+        companyEl.value = fullName || ' ';
+    }
 
-            companyEl.value = fullName || ' ';
-        }
+    fnEl.addEventListener('input', setCompanyFromName);
+    lnEl.addEventListener('input', setCompanyFromName);
+    form.addEventListener('submit', setCompanyFromName);
 
-        // Keep company in sync while typing
-        fnEl.addEventListener('input', setCompanyFromName);
-        lnEl.addEventListener('input', setCompanyFromName);
-
-        // Enforce on submit
-        form.addEventListener('submit', setCompanyFromName);
-
-        // Initialize
-        setCompanyFromName();
-    })();
+    setCompanyFromName();
+})();
 </script>
 
 </body>
