@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sell Your Device</title>
+    <title>Contact Form</title>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
     <style>
@@ -62,7 +62,7 @@
 
 <div class="form-container">
 
-<h2>Sell Your Device</h2>
+<h2>Contact Form</h2>
 <p class="required-note">Fields marked with * are required.</p>
 
 <form id="w2lForm"
@@ -73,7 +73,7 @@ method="POST">
 <input type="hidden" id="company" name="company" value="">
 <input type="hidden" name="retURL" value="https://satukaroliina.github.io/thankyou.html">
 
-<label for="salutation">Salutation</label>
+<label for="salutation">Salutation: *</label>
 <select id="salutation" name="salutation">
     <option value="">--None--</option>
     <option value="Mr.">Mr.</option>
@@ -84,32 +84,32 @@ method="POST">
     <option value="Mx.">Mx.</option>
 </select>
 
-<label for="first_name">First Name *</label>
+<label for="first_name">First Name: *</label>
 <input id="first_name" name="first_name" maxlength="40" type="text" required>
 
-<label for="last_name">Last Name *</label>
+<label for="last_name">Last Name: *</label>
 <input id="last_name" name="last_name" maxlength="80" type="text" required>
 
-<label for="email">Email *</label>
+<label for="email">Email: *</label>
 <input id="email" name="email" maxlength="80" type="email" required>
 
-<label for="phone">Phone</label>
+<label for="phone">Phone:</label>
 <input id="phone" name="phone" maxlength="40" type="tel">
 
-<label for="00Ng5000008s4d8">Product Type *</label>
+<label for="00Ng5000008s4d8">Product Type: *</label>
 <select id="00Ng5000008s4d8" name="00Ng5000008s4d8" required>
     <option value="">Choose product type</option>
     <option value="Phone">Phone</option>
     <option value="Laptop">Laptop</option>
 </select>
 
-<label for="00Ng5000008s6Te">Product Model *</label>
+<label for="00Ng5000008s6Te">Product Model: *</label>
 <input id="00Ng5000008s6Te" name="00Ng5000008s6Te" maxlength="50" type="text" required>
 
-<label for="00Ng5000008s9Mf">Purchase Year *</label>
+<label for="00Ng5000008s9Mf">Purchase Year: *</label>
 <input id="00Ng5000008s9Mf" name="00Ng5000008s9Mf" type="number" min="2000" max="2026" required>
 
-<label for="00Ng5000008s9WL">Condition *</label>
+<label for="00Ng5000008s9WL">Condition: *</label>
 <select id="00Ng5000008s9WL" name="00Ng5000008s9WL" required>
     <option value="">Choose condition</option>
     <option value="New">New</option>
@@ -118,10 +118,10 @@ method="POST">
     <option value="Broken">Broken</option>
 </select>
 
-<label for="00Ng5000008s9kr">Estimated Price (€) *</label>
+<label for="00Ng5000008s9kr">Estimated Price: *</label>
 <input id="00Ng5000008s9kr" name="00Ng5000008s9kr" type="number" step="any" required>
 
-<input type="submit" value="Get Offer">
+<input type="submit" value="Submit">
 
 </form>
 </div>
@@ -150,3 +150,4 @@ method="POST">
 
 </body>
 </html>
+
