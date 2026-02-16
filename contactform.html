@@ -59,17 +59,25 @@
 </head>
 
 <body>
+
 <div class="form-container">
+
     <h2>Contact Form</h2>
     <p class="required-note">Fields marked with * are required.</p>
 
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000003OCMU" method="POST">
+    <form id="w2lForm"
+          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000003OCMU"
+          method="POST">
 
+        <!-- Salesforce required hidden fields -->
         <input type="hidden" name="oid" value="00Dg5000003OCMU">
-        <input type="hidden" name="company" value="Private Customer">
-        <input type="hidden" name="lead_source" value="Web">
+
+        <!-- IMPORTANT: Company is required on Lead. For Person Accounts we set it to First + Last name -->
+        <input type="hidden" id="company" name="company" value="">
+
         <input type="hidden" name="retURL" value="https://satukaroliina.github.io/thankyou.html">
 
+        <!-- Salutation -->
         <label for="salutation">Salutation</label>
         <select id="salutation" name="salutation">
             <option value="">--None--</option>
@@ -119,10 +127,25 @@
         <input id="00Ng5000008s9kr" name="00Ng5000008s9kr" type="number" step="any" required>
 
         <input type="submit" value="Submit">
+
     </form>
+
 </div>
+
+<script>
+    (function () {
+        const form = document.getElementById('w2lForm');
+        const companyInput = document.getElementById('company');
+
+        form.addEventListener('submit', function () {
+            const fn = (document.getElementById('first_name').value || '').trim();
+            const ln = (document.getElementById('last_name').value || '').trim();
+
+            const fullName = [fn, ln].filter(Boolean).join(' ');
+            companyInput.value = fullName || 'Private Customer';
+        });
+    })();
+</script>
+
 </body>
 </html>
-
-
-
