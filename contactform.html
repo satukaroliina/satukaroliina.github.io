@@ -70,7 +70,7 @@ action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&or
 method="POST">
 
 <input type="hidden" name="oid" value="00Dg5000003OCMU">
-<input type="hidden" id="company" name="company" value="">
+<input type="hidden" id="company" name="company" value="-">
 <input type="hidden" name="personAccount" value="1">
 <input type="hidden" name="convertToPersonAccount" value="true">
 <input type="hidden" name="leadsource" value="Web">
@@ -130,30 +130,9 @@ method="POST">
 </form>
 </div>
 
-<script>
-(function () {
-    const form = document.getElementById('w2lForm');
-    const fnEl = document.getElementById('first_name');
-    const lnEl = document.getElementById('last_name');
-    const companyEl = document.getElementById('company');
-
-    function setCompanyFromName() {
-        const fn = (fnEl.value || '').trim();
-        const ln = (lnEl.value || '').trim();
-        const fullName = [fn, ln].filter(Boolean).join(' ');
-        companyEl.value = fullName || ' ';
-    }
-
-    fnEl.addEventListener('input', setCompanyFromName);
-    lnEl.addEventListener('input', setCompanyFromName);
-    form.addEventListener('submit', setCompanyFromName);
-
-    setCompanyFromName();
-})();
-</script>
-
 </body>
 </html>
+
 
 
 
